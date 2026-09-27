@@ -40,7 +40,7 @@ data:extend({
     order = "a[nutrients]-d[bottled-nutrients]",
     stack_size = 50,
     weight = item_weight,
-    fuel_value = "40MJ",
+    fuel_value = "20MJ", -- 10 nutrients equivalent (50% compaction loss)
     fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",
@@ -56,7 +56,7 @@ data:extend({
     order = "a[nutrients]-e[hermetic-bottled-nutrients]",
     stack_size = 50,
     weight = item_weight,
-    fuel_value = "40MJ",
+    fuel_value = "20MJ", -- 10 nutrients equivalent (50% compaction loss)
     fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",
@@ -72,7 +72,7 @@ data:extend({
     order = "a[nutrients]-f[cryo-bottled-nutrients]",
     stack_size = 50,
     weight = item_weight,
-    fuel_value = "40MJ",
+    fuel_value = "30MJ", -- 15 nutrients equivalent (75% retention upgrade)
     fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",

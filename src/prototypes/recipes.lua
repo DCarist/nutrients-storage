@@ -25,6 +25,7 @@ data:extend({
     energy_required = 2.0,
     enabled = false,
     allow_productivity = false,
+    reset_freshness_on_craft = true,
     ingredients = {
       {type = "item", name = "clean-bottle", amount = 1},
       {type = "item", name = "nutrients", amount = 20}
@@ -42,6 +43,7 @@ data:extend({
     energy_required = 2.0,
     enabled = false,
     allow_productivity = false,
+    reset_freshness_on_craft = true,
     ingredients = {
       {type = "item", name = "clean-bottle", amount = 1},
       {type = "item", name = "nutrients", amount = 20},
@@ -62,6 +64,7 @@ data:extend({
     energy_required = 2.0,
     enabled = false,
     allow_productivity = false,
+    reset_freshness_on_craft = true,
     ingredients = {
       {type = "item", name = "clean-bottle", amount = 1},
       {type = "item", name = "nutrients", amount = 20},
@@ -124,6 +127,7 @@ data:extend({
     ingredients = {
       {type = "item", name = "dirty-bottle", amount = 1},
       {type = "fluid", name = "water", amount = 10},
+      {type = "fluid", name = "lubricant", amount = 5},
       {type = "fluid", name = "fluoroketone-cold", amount = 10, catalyst_amount = 10}
     },
     results = {
