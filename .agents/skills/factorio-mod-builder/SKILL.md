@@ -56,9 +56,24 @@ When generating a release zip for distribution or testing without updating the l
 python scripts/build.py -n
 ```
 
-### 3. Interactive Mode
+### 3. Multi-Version Packaging (Factorio 2.0 & 2.1)
 
-Running without flags will build the zip into `./target/` and prompt whether to deploy:
+Build specifically for Factorio 2.0, Factorio 2.1, or produce releases for both simultaneously:
+
+```powershell
+# Build for Factorio 2.0 (v0.1.0)
+python scripts/build.py -t 2.0 -n
+
+# Build for Factorio 2.1 (v0.1.1)
+python scripts/build.py -t 2.1 -n
+
+# Build BOTH releases for Mod Portal upload
+python scripts/build.py -t all -n
+```
+
+### 4. Interactive Mode
+
+Running without flags will auto-detect the local Factorio version, build into `./target/`, and prompt whether to deploy:
 
 ```powershell
 python scripts/build.py
