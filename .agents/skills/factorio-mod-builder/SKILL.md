@@ -75,9 +75,10 @@ When releasing updates or modifying dependencies, update `src/info.json`:
    - `0.1.1` $\rightarrow$ Bug fixes, balance adjustments, or icon tweaks.
    - `0.2.0` $\rightarrow$ New features (new tech tiers, new bottle types, custom entities).
    - `1.0.0` $\rightarrow$ Full public release.
-2. **Dependencies (`dependencies`)**:
-   - Always ensure `"base >= 2.0"` and `"space-age >= 2.0"` are present when utilizing Space Age features (nutrients, spoilage, quality, cryogenic plants, electromagnetic plants, fluoroketone, or electrolyte).
-   - Prefix optional dependencies with `?` (e.g. `"? quality >= 2.0"`).
+2. **Dependencies (`dependencies`) & `factorio_version`**:
+   - For Factorio 2.1 builds, set `"factorio_version": "2.1"` and ensure `"base >= 2.1"` and `"space-age >= 2.1"` are present.
+   - For Factorio 2.0 builds, set `"factorio_version": "2.0"` and `"base >= 2.0"`.
+   - Prefix optional dependencies with `?` (e.g. `"? quality >= 2.1"`).
 
 ---
 

@@ -41,7 +41,6 @@ data:extend({
     stack_size = 50,
     weight = item_weight,
     fuel_value = "20MJ", -- 10 nutrients equivalent (50% compaction loss)
-    fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",
     spoil_ticks = 30 * 60 * 60, -- 30 minutes
@@ -57,7 +56,6 @@ data:extend({
     stack_size = 50,
     weight = item_weight,
     fuel_value = "20MJ", -- 10 nutrients equivalent (50% compaction loss)
-    fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",
     spoil_ticks = 60 * 60 * 60, -- 1 hour
@@ -73,7 +71,6 @@ data:extend({
     stack_size = 50,
     weight = item_weight,
     fuel_value = "30MJ", -- 15 nutrients equivalent (75% retention upgrade)
-    fuel_category = "nutrients",
     fuel_categories = {"nutrients"},
     burnt_result = "dirty-bottle",
     spoil_ticks = 120 * 60 * 60, -- 2 hours

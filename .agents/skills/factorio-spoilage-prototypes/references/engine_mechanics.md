@@ -31,12 +31,11 @@ This document provides technical reference for the prototype fields and engine b
 
 ### Fuel Properties on ItemPrototype
 - **`fuel_value`** (`string`): Energy provided when burned (e.g. `"20MJ"`, `"30MJ"`, `"40MJ"`).
-- **`fuel_category`** and **`fuel_categories`**:
+- **`fuel_categories`**:
   ```lua
-  fuel_category = "nutrients",
   fuel_categories = {"nutrients"},
   ```
-  Biochambers consume fuel in the `"nutrients"` category at a rate of 500 kW (0.5 MW).
+  In Factorio 2.1 (2.1.20+), `fuel_category` was removed from `ItemPrototype` and replaced by the array `fuel_categories`. Specifying `fuel_category` causes an unknown key error. Biochambers consume fuel in the `"nutrients"` category at a rate of 500 kW (0.5 MW).
   - 20 MJ powers a Biochamber for: $\frac{20\,\text{MJ}}{0.5\,\text{MW}} = 40\,\text{seconds}$.
   - 30 MJ powers a Biochamber for: $\frac{30\,\text{MJ}}{0.5\,\text{MW}} = 60\,\text{seconds}$.
 - **`burnt_result`** (`ItemID`): Produced in the burner entity's spent fuel inventory when the fuel item finishes burning.

@@ -31,8 +31,7 @@ To introduce a new preservation tier (e.g., Vulcanus Lava-Insulated Canister or 
   stack_size = 50,
   weight = 1 * (kg or 1000), -- Exactly 1,000 per rocket
   fuel_value = "30MJ",        -- Calculate based on compaction energy
-  fuel_category = "nutrients",
-  fuel_categories = {"nutrients"},
+  fuel_categories = {"nutrients"}, -- Factorio 2.1 replaces fuel_category with fuel_categories array
   burnt_result = "dirty-bottle",
   spoil_ticks = 180 * 60 * 60, -- Set spoil time (e.g., 3 hours)
   spoil_result = "spoiled-nutrient-bottle"

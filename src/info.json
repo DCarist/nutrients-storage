@@ -1,9 +1,9 @@
 {
   "name": "tugboatcapitans-nutrients-storage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Nutrients Storage",
   "author": "TugboatCapitan",
-  "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0", "space-age >= 2.0"],
+  "factorio_version": "2.1",
+  "dependencies": ["base >= 2.1", "space-age >= 2.1"],
   "description": "Adds nutrient bottling, preservation tiers (Standard, Hermetic, Cryogenic), and multi-tier bottle washing to enable flexible Gleba logistics and biolabs across planets."
 }
