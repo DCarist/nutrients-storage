@@ -1,4 +1,13 @@
-data:extend({
+-- Detect Factorio version dynamically from loaded mods (mods["base"] is e.g. "2.0.77" or "2.1.20")
+local is_factorio_2_1 = false
+if mods and mods["base"] then
+  local major, minor = mods["base"]:match("^(%d+)%.(%d+)")
+  if (tonumber(major) or 0) > 2 or ((tonumber(major) or 0) == 2 and (tonumber(minor) or 0) >= 1) then
+    is_factorio_2_1 = true
+  end
+end
+
+local recipes = {
   -- 1. Clean Bottle Crafting
   {
     type = "recipe",
@@ -156,4 +165,37 @@ data:extend({
     },
     main_product = "dirty-bottle"
   }
-})
+}
+
+-- Adapt RecipePrototypes dynamically for Factorio 2.1 compatibility:
+-- 1. `category` and `additional_categories` were merged into `categories` array.
+-- 2. `reset_freshness_on_craft` was moved from RecipePrototype to ItemProductPrototype.
+-- 3. `probability` on ProductPrototype was renamed to `independent_probability`.
+if is_factorio_2_1 then
+  for _, recipe in ipairs(recipes) do
+    if recipe.category then
+      recipe.categories = {recipe.category}
+      recipe.category = nil
+    end
+    if recipe.reset_freshness_on_craft then
+      if recipe.results then
+        for _, result in ipairs(recipe.results) do
+          if result.type == "item" or not result.type then
+            result.reset_freshness_on_craft = true
+          end
+        end
+      end
+      recipe.reset_freshness_on_craft = nil
+    end
+    if recipe.results then
+      for _, result in ipairs(recipe.results) do
+        if result.probability ~= nil then
+          result.independent_probability = result.probability
+          result.probability = nil
+        end
+      end
+    end
+  end
+end
+
+data:extend(recipes)

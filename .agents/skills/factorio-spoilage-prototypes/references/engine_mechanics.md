@@ -18,12 +18,11 @@ This document provides technical reference for the prototype fields and engine b
   > Factorio engine only supports a **single item ID** for `spoil_result`. To return multiple items (e.g. 1 Dirty Bottle + 10 Spoilage), the item must spoil into an intermediate item (such as `spoiled-nutrient-bottle`), which the player dumps/empties via a recipe.
 
 ### Recipe Freshness Reset
-- In Factorio 2.0, if a recipe consumes spoilable ingredients (like nutrients), the output product **inherits the average freshness** of the ingredients by default. Setting `percent_spoiled = 0` on the product is overridden by ingredient inheritance!
-- To guarantee an output item is **100% fresh** regardless of ingredient age, you must set:
-  ```lua
-  reset_freshness_on_craft = true,
-  ```
-  directly on the `RecipePrototype`.
+- In Factorio, if a recipe consumes spoilable ingredients (like nutrients), the output product **inherits the average freshness** of the ingredients by default. Setting `percent_spoiled = 0` on the product is overridden by ingredient inheritance!
+- To guarantee an output item is **100% fresh** regardless of ingredient age:
+  - **Factorio 2.0**: Set `reset_freshness_on_craft = true` on the `RecipePrototype`.
+  - **Factorio 2.1**: Set `reset_freshness_on_craft = true` on each `ItemProductPrototype` inside `results` (moved from RecipePrototype to ItemProductPrototype).
+  - Our `recipes.lua` dynamically adapts this based on loaded game version.
 
 ---
 
